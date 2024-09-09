@@ -11,6 +11,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
+import { formatDistanceToNow } from "date-fns";
 
 const PostWidget = ({
   postId,
@@ -22,6 +23,7 @@ const PostWidget = ({
   userPicturePath,
   likes,
   comments,
+  createdAt,
 }) => {
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
@@ -67,6 +69,11 @@ const PostWidget = ({
           src={`http://localhost:4000/assets/${picturePath}`}
         />
       )}
+
+      <Typography color={main} variant="body2" sx={{ mt: "0.5rem", mb: "1rem" }}>
+        {createdAt ? formatDistanceToNow(new Date(createdAt), { addSuffix: true }) : "Invalid date"}
+      </Typography>
+
       <FlexBetween mt="0.25rem">
         <FlexBetween gap="1rem">
           <FlexBetween gap="0.3rem">

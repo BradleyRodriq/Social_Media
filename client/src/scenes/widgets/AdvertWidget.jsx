@@ -20,7 +20,7 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="http://localhost:4000/assets/info4.jpeg"
+        src="http://localhost:4000/assets/1ecde018e863e2aaee31f00a23378c35.jpe"
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
@@ -28,8 +28,7 @@ const AdvertWidget = () => {
         <Typography color={medium}>somerandomad.com</Typography>
       </FlexBetween>
       <Typography color={medium} m="0.5rem 0">
-        Your pathway to stunning and immaculate beauty and made sure your skin
-        is exfoliating skin and shining like light.
+        The Straw Hats are a pirate crew that travels the Grand Line, searching for the One Piece, the greatest treasure in the world.
       </Typography>
     </WidgetWrapper>
   );
