@@ -54,7 +54,7 @@ const PostWidget = ({
       <Friend
         friendId={postUserId}
         name={name}
-        subtitle={location}
+        subtitle={`${location} || ${createdAt ? formatDistanceToNow(new Date(createdAt), { addSuffix: true }) : "Invalid date"}`}
         userPicturePath={userPicturePath}
       />
       <Typography color={main} sx={{ mt: "1rem" }}>
@@ -68,11 +68,8 @@ const PostWidget = ({
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
           src={`http://localhost:4000/assets/${picturePath}`}
         />
-      )}
 
-      <Typography color={main} variant="body2" sx={{ mt: "0.5rem", mb: "1rem" }}>
-        {createdAt ? formatDistanceToNow(new Date(createdAt), { addSuffix: true }) : "Invalid date"}
-      </Typography>
+      )}
 
       <FlexBetween mt="0.25rem">
         <FlexBetween gap="1rem">
@@ -109,7 +106,9 @@ const PostWidget = ({
               </Typography>
             </Box>
           ))}
+
           <Divider />
+
         </Box>
       )}
     </WidgetWrapper>
